@@ -1,0 +1,17 @@
+{
+  "titulo": "Mini-SK-PC-17-10-a (1) 17-10-2026, 03-20-01",
+  "arquivo": "index.html",
+  "itens": [
+    {
+      "path": "app/index.html",
+      "nome": "Play",
+      "desc": "",
+      "on": true,
+      "icone": "app/icons/icon.svg"
+    }
+  ],
+  "sub": "",
+  "logo": "",
+  "tema": "escuro",
+  "links": []
+}

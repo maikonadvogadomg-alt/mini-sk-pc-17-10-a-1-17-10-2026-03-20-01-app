@@ -1,0 +1,25 @@
+name: Desktop (.exe)
+# Feita pelo 🏗️ Preparar do Mini SK. O .exe sai em Actions → "Desktop (.exe)" → Artifacts.
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+jobs:
+  exe:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Instalar as dependências
+        run: npm install --no-audit --no-fund --legacy-peer-deps
+      - name: Montar o site
+        run: npm run build --if-present
+      - name: Fazer o .exe
+        run: npx electron-builder --win portable --publish never
+      - uses: actions/upload-artifact@v4
+        with:
+          name: app-windows
+          path: dist-electron/*.exe
