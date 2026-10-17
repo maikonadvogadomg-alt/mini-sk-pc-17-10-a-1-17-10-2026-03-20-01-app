@@ -22,4 +22,6 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: app-windows
-          path: dist-electron/*.exe
+          # Caminho ajustado: electron-builder geralmente salva em 'dist'
+          # Se não funcionar, precisamos verificar onde ele salva no seu projeto.
+          path: dist/*.exe
